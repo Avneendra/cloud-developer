@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
+import { fstat } from 'fs';
 
 (async () => {
 
@@ -30,7 +31,28 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   /**************************************************************************** */
 
   //! END @TODO1
-  
+  app.get("/filteredimage/", async( req, res ) => {
+        let { image_url } = req.query;
+
+        if( !image_url )
+        {
+            return res.status(400)
+                    .send(`URL is required`);
+        }
+        let filteredpath: string;
+        try 
+        {
+          filteredpath = await filterImageFromURL(image_url);
+        } catch (e) 
+        {
+            res.status(500).send(`Internal Server Error! Error in filtering image from URL`);
+        }
+        
+        res.sendfile(filteredpath, function() {
+          deleteLocalFiles(filteredpath);
+      });
+  });
+
   // Root Endpoint
   // Displays a simple message to the user
   app.get( "/", async ( req, res ) => {
