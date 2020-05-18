@@ -2,7 +2,7 @@ import { APIGatewayProxyHandler, APIGatewayProxyEvent, APIGatewayProxyResult } f
 import 'source-map-support/register'
 
 import { CreateGroupRequest } from '../../requests/CreateGroupRequest'
-import { createGroup } from '../../businessLogic/groups'
+import { createGroup } from '../../helper/groups'
 
 export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   console.log('Processing event: ', event)

@@ -1,7 +1,7 @@
 import * as uuid from 'uuid'
 
 import { Group } from '../models/Group'
-import { GroupAccess } from '../dataLayer/groupsAccess'
+import { GroupAccess } from '../helper/groupsAccess'
 import { CreateGroupRequest } from '../requests/CreateGroupRequest'
 import { getUserId } from '../auth/utils'
 

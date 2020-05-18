@@ -1,4 +1,4 @@
-import { GroupAccess } from '../../src/dataLayer/groupsAccess'
+import { GroupAccess } from '../../src/helper/groupsAccess'
 
 const group = {
   id: 'group-id',

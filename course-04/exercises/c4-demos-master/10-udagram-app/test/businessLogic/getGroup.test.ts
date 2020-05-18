@@ -1,7 +1,7 @@
-import { GroupAccess } from '../../src/dataLayer/groupsAccess'
-import { getGroup } from '../../src/businessLogic/groups'
+import { GroupAccess } from '../../src/helper/groupsAccess'
+import { getGroup } from '../../src/helper/groups'
 
-jest.mock('../../src/dataLayer/groupsAccess')
+jest.mock('../../src/helper/groupsAccess')
 
 const group = {
   id: 'group-id',

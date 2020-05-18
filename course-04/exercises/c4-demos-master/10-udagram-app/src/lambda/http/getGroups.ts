@@ -1,5 +1,5 @@
 import 'source-map-support/register'
-import { getAllGroups } from '../../businessLogic/groups';
+import { getAllGroups } from '../../helper/groups';
 
 import * as express from 'express'
 import * as awsServerlessExpress from 'aws-serverless-express'
