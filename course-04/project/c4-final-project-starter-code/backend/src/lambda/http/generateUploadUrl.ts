@@ -3,8 +3,7 @@ import 'source-map-support/register'
 import * as AWS  from 'aws-sdk'
 import * as uuid from 'uuid'
 import * as AWSXRay from 'aws-xray-sdk'
-import { updateAttachment } from '../../helper/todo'
-//import { stringify } from 'querystring'
+import { updateAttachment } from '../../businessLogic/todo'
 
 const XAWS = AWSXRay.captureAWS(AWS)
 

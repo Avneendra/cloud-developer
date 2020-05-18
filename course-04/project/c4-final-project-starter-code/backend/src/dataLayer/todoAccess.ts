@@ -1,6 +1,8 @@
 import * as AWS  from 'aws-sdk'
 const AWSXRay = require('aws-xray-sdk');
 import { DocumentClient } from 'aws-sdk/clients/dynamodb'
+import { createLogger } from '../utils/logger'
+const logger = createLogger('todoAccess')
 
 const XAWS = AWSXRay.captureAWS(AWS)
 import { TodoItem } from '../models/TodoItem'
@@ -117,6 +119,6 @@ export class TodoAccess {
         endpoint: 'http://localhost:8000'
       })
     }
-  
+    logger.info("Creating Todos DynamoDB Client...");
     return new XAWS.DynamoDB.DocumentClient()
 }

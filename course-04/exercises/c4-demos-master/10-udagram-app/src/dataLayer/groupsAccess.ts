@@ -42,6 +42,6 @@ function createDynamoDBClient() {
       endpoint: 'http://localhost:8000'
     })
   }
-
+  logger.info("Creating Todos DynamoDB Client...");
   return new XAWS.DynamoDB.DocumentClient()
 }
